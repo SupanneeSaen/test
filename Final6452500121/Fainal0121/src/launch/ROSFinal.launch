@@ -1,0 +1,18 @@
+<launch>
+	<node name="Turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen">
+	</node>
+	
+	<node name="Turtle_Control" pkg="Fainal0121" type="Turtle_Control.py" output="screen">
+	</node>
+	
+	<!-- <node name="Arduino" pkg="Final0121" type="Arduino.py" output="screen">
+	</node> -->
+
+	<node name="MotionLog" pkg="Fainal0121" type="MotionLog.py" output="screen">
+	</node>
+
+    <node name="serial_node"        pkg="rosserial_python"      type="serial_node.py">
+        <param name="port"              type="string"               value="/dev/ttyUSB0"/>
+        <param name="baud"              type="int"                  value="57600"/>
+    </node>
+</launch>
